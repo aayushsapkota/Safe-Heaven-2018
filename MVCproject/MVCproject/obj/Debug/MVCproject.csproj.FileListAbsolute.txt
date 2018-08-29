@@ -95,3 +95,7 @@ C:\Users\labin\Documents\Safe-Heaven-2018\MVCproject\MVCproject\obj\Debug\MVCpro
 C:\Users\labin\Documents\Safe-Heaven-2018\MVCproject\MVCproject\obj\Debug\MVCproject.csproj.CopyComplete
 C:\Users\labin\Documents\Safe-Heaven-2018\MVCproject\MVCproject\obj\Debug\MVCproject.dll
 C:\Users\labin\Documents\Safe-Heaven-2018\MVCproject\MVCproject\obj\Debug\MVCproject.pdb
+C:\Users\labin\Documents\Safe-Heaven-2018\MVCproject\MVCproject\bin\EntityFramework.dll
+C:\Users\labin\Documents\Safe-Heaven-2018\MVCproject\MVCproject\bin\EntityFramework.SqlServer.dll
+C:\Users\labin\Documents\Safe-Heaven-2018\MVCproject\MVCproject\bin\EntityFramework.xml
+C:\Users\labin\Documents\Safe-Heaven-2018\MVCproject\MVCproject\bin\EntityFramework.SqlServer.xml
