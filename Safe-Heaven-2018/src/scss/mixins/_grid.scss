@@ -1,0 +1,13 @@
+@function container-max($name, $breakpoints: $container-max-widths) {
+  $max: map-get($breakpoints, $name);
+  @return if($max != 0, $max, null);
+}
+
+@mixin get-container-max-width($name, $max-widths: $container-max-widths){
+  $max: container-max($name, $max-widths);
+  @if $max {
+    max-width: auto;
+  } @else {
+    max-width: auto;
+  }
+}

@@ -1,0 +1,78 @@
+.home-banner {
+  background-color: theme-color(tertiary);
+  color: white;
+  text-align: center;
+}
+.home-banner__text{
+  @include padding-leader(3);
+  @include padding-trailer(3);
+}
+
+.home-banner__form {
+  background-color: white;
+  color: theme-color(dark);
+  @include padding-leader(2);
+  @include padding-trailer(3);
+  .form__error {
+    @include margin-leader(1);
+  }
+}
+
+.home-banner__text-divider {
+  @include base-base(16px, $dff, 1, 1);
+}
+
+.home-banner__form-title {
+  @include base-base(26px, $dff, 1, 0);
+  font-weight: 500px;
+}
+
+.home-banner__btn-wrap {
+  justify-content: center;
+}
+
+.home-banner__btn {
+  padding-left: 20px;
+  padding-right: 20px;
+  min-width: 200px;
+}
+
+// SMALL MQ
+@include media-breakpoint-up("sm") {
+  .home-banner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .home-banner__text {
+    @include padding-leader(5);
+    @include padding-trailer(6);
+    width: span(7 of 12);
+    margin-right: gutter(12)
+  }
+  .home-banner__form {
+    @include padding-leader(5);
+    @include padding-trailer(6);
+    width: span(5 of 12);
+  }
+}
+
+// medium MQ
+@include media-breakpoint-up("md") {
+  .home-banner__text {
+    @include padding-leader(10);
+    @include padding-trailer(11);
+    width: span(8 of 12);
+  }
+
+  .home-banner__form {
+    @include padding-leader(10);
+    @include padding-trailer(11);
+    width: span(4 of 12);
+  }
+
+  .home-banner__title {
+    @include base-base(66px, $dff, 1, 0);
+    line-height: 80px;
+  }
+
+}

@@ -1,0 +1,44 @@
+{
+  "name": "Safe-Heaven",
+  "version": "1.2.0",
+  "description": "Creating game for kids aged 6 to 10 to learn preventive measures of cybersecurity",
+  "main": "main.bundle.js",
+  "scripts": {
+    "start": "rimraf build && NODE_ENV=production webpack --watch",
+    "dev": "NODE_ENV=development node webpack-dev-server.js",
+    "build-css": "node-sass --include-path scss src/scss/_main.scss Safe-Heaven-2018/Content/main.bundle.css",
+    "watch-css": "nodemon -e scss -x 'npm run build-css'",
+    "build": "rimraf build && NODE_ENV=production webpack"
+  },
+  "keywords": [
+    "API",
+    "Server",
+    "API"
+  ],
+  "author": "Nobody",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^8.1.0",
+    "base-base": "git+https://github.com/DashMedia/base-base.git",
+    "babel-core": "latest",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "bootstrap": "^4.0.0",
+    "css-loader": "^0.28.10",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "font-loader": "^0.1.2",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.17.1",
+    "object-fit-images": "^3.2.3",
+    "postcss-loader": "^2.1.1",
+    "rimraf": "^2.6.2",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.2",
+    "susy": "^3.0.3",
+    "uglifyjs-webpack-plugin": "^1.2.2",
+    "webpack": "^3.10.0",
+    "win-node-env": "^0.1.0"
+  }
+}

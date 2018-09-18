@@ -1,0 +1,52 @@
+
+#fancy-inputs {
+  float: left;
+  width: 100%;
+  margin: 0 0 50px 0;
+}
+
+#fancy-inputs input::placeholder {
+  height: 40px;
+  cursor: text;
+  color: white;
+}
+
+#fancy-inputs input {
+  display: block;
+  height: 40px;
+  padding: 0 10px;
+  border: 0;
+  border-bottom: 3px solid white;
+  background-color: transparent;
+  color: white;
+  font-family: 'Indie Flower', cursive;
+  font-size: 22px;
+  position: relative;
+}
+
+#fancy-inputs input:focus {
+  outline: 0;
+}
+
+#fancy-inputs input.white {
+  background-color: #E74C3C;
+}
+
+#fancy-inputs input:focus + span span {
+  cursor: initial;
+  position: absolute;
+  top: -35px;
+  color: #2C3E50;
+}
+
+#fancy-inputs input:focus + span:before {
+  width: 50%;
+}
+
+#fancy-inputs input:focus + span:after {
+  width: 50%;
+}
+
+#fancy-inputs span.fixed span {
+  top: -35px;
+}

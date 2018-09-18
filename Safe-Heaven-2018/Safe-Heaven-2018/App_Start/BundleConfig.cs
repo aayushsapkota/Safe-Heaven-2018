@@ -23,8 +23,7 @@ namespace Safe_Heaven_2018
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/main.bundle.css"));
         }
     }
 }

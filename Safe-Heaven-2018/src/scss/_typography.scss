@@ -1,0 +1,117 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+}
+
+h1 {
+  @include base-base(36px, $hff, 2,  $lines: 3);
+  letter-spacing: -0.6px;
+}
+
+h2 {
+  @include base-base(32px, $hff, 2, $lines: 2.5);
+  letter-spacing: -0.4px;
+}
+
+h3 {
+  @include base-base(28px, $hff, 2);
+  letter-spacing: -0.3px;
+}
+
+h4 {
+  @include base-base(22px, $hff, 2);
+}
+
+h5 {
+  @include base-base(18px, $hff, 0.5, $lines: 1.5);
+}
+
+
+// SMALL MQ
+@include media-breakpoint-up('sm') {
+  h1 {
+    @include base-base(42px, $hff, 2, $lines: 3.5);
+  }
+
+  h2 {
+    @include base-base(32px, $hff, 2, $lines: 3);
+  }
+
+  h3 {
+    @include base-base(28px, $hff, 2, $lines: 2.5);
+  }
+
+  h4 {
+    @include base-base(22px, $hff, 1.5, $lines: 2);
+  }
+}
+
+// MEDIUM MQ
+@include media-breakpoint-up('md') {
+  h1 {
+    @include base-base(52px, $hff, 2, $lines: 3.5);
+  }
+
+  h2 {
+    @include base-base(36px, $hff, 2, $lines: 3);
+  }
+
+  h3 {
+    @include base-base(32px, $hff, 2, $lines: 2.5);
+  }
+
+  h4 {
+    @include base-base(24px, $hff, 1.5, $lines: 2);
+  }
+}
+
+.rte{
+  p {
+    @include base-base(16px, $dff, 2, $lines: 1.5);
+  }
+
+  a {
+    color: theme-color(secondary);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 2px solid theme-color white;
+    transition: border-bottom-color 0.25s ease-in-out;
+    &:hover, &:focus, &:active{
+      text-decoration: none;
+      color: theme-color(secondary);
+      border-bottom: 2px solid theme-color(secondary);
+    }
+  }
+  .btn{
+    color: white;
+    &:hover, &:focus, &:active{
+
+      color: white;
+      border-bottom: 0;
+    }
+  }
+
+  ul,
+  ol {
+    padding-left: 0;
+    @include margin-trailer(1.5);
+    list-style-type: none;
+    li {
+      @include base-base(16px, $hff, 0.5, $lines: 1.5);
+      &::before {
+        content: ">";
+        padding-right: 12px;
+      }
+      ul,
+      ol {
+        padding-top: 0;
+        padding-left: 24px;
+        @include margin-trailer(0.5);
+
+      }
+    }
+  }
+}

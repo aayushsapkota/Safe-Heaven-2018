@@ -1,0 +1,108 @@
+.modal {
+  display: none;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(20,20,20,0.5);
+  overflow: auto;
+}
+
+.modal__wrap {
+  margin: 10%;
+  position: relative;
+  width: 80%;
+  background-color: white;
+  padding-left: span(1 wide of 12);
+  padding-right: span(1 wide of 12);
+  border-radius: 1px;
+  box-shadow: 0 0 2px 2px $grey-lighter;
+  text-align: center;
+  @include padding-leader(2);
+  @include padding-trailer(3);
+  // SMALL MQ
+  @include media-breakpoint-up("sm") {
+    padding-left: span(1  of 12);
+    padding-right: span(1  of 12);
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  // MEDIUM MQ
+  @include media-breakpoint-up("md") {
+    padding-left: span(1 wide of 12);
+    padding-right: span(1 wide  of 12);
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+}
+
+
+.modal--open {
+  display: block;
+  height: auto;
+  position: absolute;
+  z-index: 2;
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: 0;
+  font-weight: 500;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $grey;
+    font-weight: 700;
+    outline: none;
+  }
+
+}
+
+.modal__title {
+  @include base-base(32px, $dff, 4, 1);
+}
+
+.modal__form {
+  input {
+    width: 80%;
+    border: 1px solid $grey-lighter;
+    border-radius: 2px;
+    @include margin-trailer(2);
+    padding-left: 12px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    &:focus{
+
+    }
+  }
+}
+
+.modal__btn-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  @include margin-trailer(1);
+  .btn {
+    margin-top: 0;
+    width: 80%;
+  }
+}
+.modal__forgot-cta {
+  color: $grey-lighter;
+  text-decoration: none;
+  font-weight: 500;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $grey;
+    text-decoration: none;
+  }
+}

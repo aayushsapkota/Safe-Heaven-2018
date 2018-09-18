@@ -1,0 +1,6 @@
+@mixin span($context: susy-get('columns'), $config: ()) {
+  width: span($context, $config);
+}
+@mixin push($context: susy-get('columns'), $config: ()) {
+  margin-left: span($context, $config);
+}

@@ -1,0 +1,147 @@
+.form__outer_wrap {
+  @extend .wrap;
+}
+.form__controls {
+  @include padding-leader(2);
+  @include padding-trailer(2);
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 100%;
+  background-color: white;
+}
+.form {
+  @include padding-leader(1);
+  @include padding-trailer(1);
+  .btn {
+    @include margin-leader(2);
+    width: auto;
+    max-width: 200px;
+  }
+  label{
+    width: 100%;
+  }
+}
+
+.form__title{
+  @include base-base(42px, $hff, 2, 0);
+}
+
+.form__label {
+  display: block;
+  @include base-base(16px, $hff, 0);
+  color: theme-color(dark);
+  margin-bottom: 0;
+}
+
+.form__input {
+  cursor: pointer;
+  color: theme-color(dark);
+  display: block;
+  @include base-base(14px, $hff, 2);
+  width: 100%;
+  max-width: 800px;
+  border: 0;
+  padding-left: 6px;
+  border-bottom: 3px solid theme-color(dark);
+  transition: border-bottom-color 0.2s ease-in;
+  &:focus {
+    outline: none;
+    border: 0;
+    border-bottom: 3px solid theme-color(primary);
+
+    &:invalid {
+      box-shadow: none;
+      border-bottom: 3px solid theme-color(danger);
+      & + .form__input-error{
+        display: block;
+        height: auto;
+      }
+    }
+  }
+  &:valid {
+    border-bottom: 3px solid theme-color(success);
+    & + .form__input-error{
+      display: none;
+      height: 0;
+    }
+  }
+}
+
+
+.form__input-error {
+  color: theme-color(danger);
+  @include base-base(14px, $dff, 1, 0);
+  padding-top: 0;
+  margin-top: -10px;
+  display: none;
+  height: 0;
+}
+
+.form__input--radio {
+  display: inline-block;
+  padding-right: 12px;
+  width: auto;
+  @include base-base(14px, $hff, 0);
+  border-bottom: 0;
+}
+
+.form__input--range {
+  @include margin-leader(1);
+  border-bottom: 0;
+  padding-top: 0;
+  &:focus,
+  &:valid {
+    border-bottom: 0;
+  }
+}
+
+.form__radio-input {
+  display: inline-block;
+  width: auto;
+  @include base-base(14px, $hff, 0);
+}
+
+.form__radio-label {
+  @extend .form__label;
+  padding-left: 12px;
+  @include base-base(14px, $hff, 0);
+  color: theme-color(dark);
+  display: inline-block;
+  width: auto;
+  margin-right: 24px;
+  &:last-child() {
+    margin-right: 0;
+  }
+}
+
+.form .form__error {
+  @include margin-leader(1);
+}
+
+.form__error {
+  background-color: theme-color(danger);
+  color: white;
+  width: auto;
+  @include base-base(20px, $dff, 0, 0);
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 2px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 4px;
+  @include margin-leader(0);
+  p{
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.form__status{
+  @extend .form__label;
+  color: white;
+  @include margin-leader(1);
+  padding-left: 12px;
+  padding-bottom: 8px;
+  background-color: $teal;
+  font-weight: bold;
+}

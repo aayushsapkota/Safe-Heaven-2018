@@ -1,0 +1,7 @@
+.records__wrap {
+  background-color: $grey;
+  @include padding-leader(3);
+  @include padding-trailer(2);
+  color: white;
+  min-height: calc(100% - 55px);
+}
