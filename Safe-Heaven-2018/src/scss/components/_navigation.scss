@@ -1,4 +1,5 @@
 //mobile nav fix
+
 #desk-nav {
   display: none;
 }
@@ -15,12 +16,17 @@
     text-decoration: none;
   }
 }
-nav .btn{
+
+nav .btn {
   margin-top: 2px;
-  &:hover, &:focus, &:active{
+
+  &:active,
+  &:focus,
+  &:hover {
     background-color: theme-color(secondary);
   }
 }
+
 .mobile-nav__title {
   color: white;
   padding-bottom: 10px;
@@ -30,6 +36,7 @@ nav .btn{
   @include base-base(20px, $dff, 0, 0);
 }
 /* drawer menu of mobile navigation */
+
 .drawer-menu {
   box-sizing: border-box;
   position: fixed;
@@ -86,6 +93,7 @@ nav .btn{
   }
 }
 /* mobile menu button - label tag */
+
 .menu-btn {
   position: fixed;
   display: block;
@@ -127,6 +135,7 @@ nav .btn{
   opacity: 1;
 }
 /* Close Menu */
+
 .close-menu {
   position: fixed;
   top: 0;
@@ -140,7 +149,6 @@ nav .btn{
   z-index: 99;
 }
 /* Checked Effects */
-
 .check {
   display: none;
 }
@@ -220,7 +228,7 @@ nav .btn{
     padding: 0;
     margin-right: 10px;
     align-items: center;
-    width: 100%;
+    width: auto;
     display: flex;
     font-weight: bold;
     margin-bottom: 0;
@@ -237,6 +245,11 @@ nav .btn{
 
   #desk-nav svg polygon {
     opacity: 0.6;
+  }
+
+  .desk-nav {
+    display: flex;
+    justify-content: space-between;
   }
 
   .desk-nav li {
