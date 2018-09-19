@@ -1,52 +1,64 @@
+.fancy-input__wrap {
+  background-color: theme-color(primary);
+  min-height: calc(100vh - 55px);
+}
 
-#fancy-inputs {
-  float: left;
+.fancy-input__form {
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  margin: 0 0 50px 0;
-}
-
-#fancy-inputs input::placeholder {
-  height: 40px;
-  cursor: text;
   color: white;
+  @include padding-leader(3);
+  @include padding-trailer(3);
+
+  // SMALL MQ
+  @include media-breakpoint-up("sm") {
+    @include padding-leader(4);
+    @include padding-trailer(4);
+  }
+  // MEDIUM MQ
+  @include media-breakpoint-up("md") {
+    @include padding-leader(7);
+    @include padding-trailer(5);
+    margin-left: span(2 of 12);
+    margin-right: span(2 of 12);
+    @include span(8 of 12);
+  }
 }
 
-#fancy-inputs input {
+.fancy-input {
+  width: 100%;
+
+  label {
+    @include base-base(18px, $hff, 1, 0);
+    font-weight: 700;
+  }
+
+  input {
   display: block;
-  height: 40px;
   padding: 0 10px;
+  width: 100%;
   border: 0;
   border-bottom: 3px solid white;
   background-color: transparent;
   color: white;
-  font-family: 'Indie Flower', cursive;
-  font-size: 22px;
+  font-family: $hff, cursive;
+  font-size: 16px;
   position: relative;
-}
+  @include margin-trailer(2);
 
-#fancy-inputs input:focus {
-  outline: 0;
-}
+  &::placeholder {
+    height: 40px;
+    cursor: text;
+    color: white;
+  }
 
-#fancy-inputs input.white {
-  background-color: #E74C3C;
-}
+  &:focus {
+    outline: 0;
+  }
 
-#fancy-inputs input:focus + span span {
-  cursor: initial;
-  position: absolute;
-  top: -35px;
-  color: #2C3E50;
+  &.white {
+    background-color: #E74C3C;
+  }
 }
-
-#fancy-inputs input:focus + span:before {
-  width: 50%;
-}
-
-#fancy-inputs input:focus + span:after {
-  width: 50%;
-}
-
-#fancy-inputs span.fixed span {
-  top: -35px;
 }
