@@ -2,17 +2,35 @@
 @{
     ViewBag.Title = "Register";
 }
-<section class="middle">
+
+<section class="fancy-input__wrap">
     <div class="container">
-        <form action="/" method="post">
-            <h1>Login into Safe-Heaven</h1>
+        <form action="/" method="post" class="fancy-input__form">
+            <h1>@ViewBag.Title</h1>
 
             <!--  Fancy inputs  -->
-            <div id="fancy-inputs">
+            <div class="fancy-input">
+                <div class="form-control">
+                    <label class="label">Full name</label>
+                    <input type="text" placeholder="John Awesome">
+                </div>
+                <div class="form-control">
+                    <label class="label">Username</label>
+                    <input type="text" placeholder="awesome011">
+                </div>
+                <div class="form-control">
+                    <label class="label">Email address</label>
+                    <input type="email" placeholder="John Awesome">
+                </div>
+                <div class="form-control">
+                    <label class="label">Password</label>
+                    <input type="password" placeholder="Password">
+                </div>
+                <div class="form-control">
+                    <label class="label">Confirm Password</label>
+                    <input type="password" placeholder="Password">
+                </div>
 
-                    <input type="text" placeholder="username">
-                
-                    <input type="text" placeholder="password" />
             </div>
 
             <div class="form-group">

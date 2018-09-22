@@ -222,17 +222,23 @@ nav .btn {
     align-items: center;
     // justify-content: space-between;
   }
-
-  #desk-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin-right: 10px;
-    align-items: center;
-    width: auto;
+  .desk-nav {
     display: flex;
-    font-weight: bold;
-    margin-bottom: 0;
-    overflow: hidden;
+    justify-content: space-between;
+    width: calc(100% - 62px);
+    ul {
+      list-style-type: none;
+      padding: 0;
+      width: auto;
+      width: fit-content;
+      margin-bottom: 0;
+      overflow: hidden;
+      height: 55px;
+
+      li {
+        display: inline-block;
+      }
+    }
   }
 
   #desk-nav svg {
@@ -247,10 +253,7 @@ nav .btn {
     opacity: 0.6;
   }
 
-  .desk-nav {
-    display: flex;
-    justify-content: space-between;
-  }
+
 
   .desk-nav li {
     overflow: hidden;
@@ -258,14 +261,15 @@ nav .btn {
 
   #desk-nav li a {
     position: relative;
+    display: block;
     color: #ffffff;
     text-decoration: none;
     letter-spacing: 1.2px;
-    @include base-base(14px, $dff, 0, 0);
-    padding: 17px 10px;
-    opacity: 0.75;
-    margin: 0 10px;
-    letter-spacing: 3px;
+    @include base-base(14px, $dff, 0, 0, $lines: 1.5);
+    padding-top: 16px;
+    padding-bottom: 15px;
+    padding-left: 12px;
+    padding-right: 10px;
     font-weight: 500;
     text-transform: uppercase;
     transition: all 0.2s ease-out;
@@ -277,7 +281,7 @@ nav .btn {
     &:hover {
       text-decoration: none;
       outline: none;
-      color: $grey-lighter;
+      color: theme-color(secondary);
     }
 
     &:active {
@@ -287,8 +291,9 @@ nav .btn {
 
   .desk-nav__logo {
     width: 50px;
-    height: auto;
-    margin-left: 12px;
+    height: 52px;
+    margin-right: 12px;
+    margin-top: 2px;
     @include object-fit(contain, center);
   }
 }

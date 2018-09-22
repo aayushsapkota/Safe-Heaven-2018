@@ -6,7 +6,7 @@
 @mixin get-container-max-width($name, $max-widths: $container-max-widths){
   $max: container-max($name, $max-widths);
   @if $max {
-    max-width: auto;
+    max-width: $max;
   } @else {
     max-width: auto;
   }

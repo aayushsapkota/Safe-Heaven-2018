@@ -18,19 +18,20 @@
   }
   // MEDIUM MQ
   @include media-breakpoint-up("md") {
-    @include padding-leader(7);
+    @include padding-leader(6);
     @include padding-trailer(5);
     margin-left: span(2 of 12);
     margin-right: span(2 of 12);
     @include span(8 of 12);
   }
+  
 }
 
 .fancy-input {
   width: 100%;
 
   label {
-    @include base-base(18px, $hff, 1, 0);
+    @include base-base(18px, $dff, 1, 0);
     font-weight: 700;
   }
 
