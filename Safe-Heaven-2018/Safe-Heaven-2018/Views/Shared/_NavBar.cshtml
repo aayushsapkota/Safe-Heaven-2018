@@ -1,0 +1,38 @@
+﻿
+<div id="mobile-bar">
+    <a href="/">
+        <h3 class="mobile-nav__title">Safe Heaven</h3>
+    </a>
+</div>
+<input type="checkbox" class="check" id="checked">
+<label class="menu-btn" for="checked">
+    <span class="bar top"></span>
+    <span class="bar middle"></span>
+    <span class="bar bottom"></span>
+    <span class="menu-btn__text"></span>
+</label>
+<label class="close-menu" for="checked"></label>
+<nav class="drawer-menu">
+    <div class="container">
+        <ul>
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("About", "About", "Home")</li>
+        </ul>
+        @Html.Partial("_LoginPartial")
+    </div>
+</nav>
+
+<div id="desk-nav">
+    <div class="container">
+        <a href="/">
+            <img class="desk-nav__logo" src="https://placehold.it/100x80" alt="Logo">
+        </a>
+        <nav class="desk-nav">
+            <ul>
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </nav>
+    </div>
+</div>
