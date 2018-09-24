@@ -10,25 +10,35 @@
 
             <!--  Fancy inputs  -->
             <div class="fancy-input">
+                @Html.ValidationSummary("", new {@class = "text-danger"})
                 <div class="form-control">
-                    <label class="label">Full name</label>
-                    <input type="text" placeholder="John Awesome">
+                    <label class="label">FullName</label>
+                    @Html.TextBoxFor(m => m.FullName, new { @class = "form-control"})
+                    @Html.ValidationMessageFor(m=>m.FullName,"")
+
                 </div>
-                <div class="form-control">
+                <div class="form-group">
                     <label class="label">Username</label>
-                    <input type="text" placeholder="awesome011">
+                    @Html.TextBoxFor(m=> m.Username, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m=> m.Username,"")
                 </div>
-                <div class="form-control">
+                <div class="form-group">
                     <label class="label">Email address</label>
-                    <input type="email" placeholder="John Awesome">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+
+                    @Html.ValidationMessageFor(m => m.Email, "")
                 </div>
-                <div class="form-control">
+                <div class="form-group">
                     <label class="label">Password</label>
-                    <input type="password" placeholder="Password">
+                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+
+                    @Html.ValidationMessageFor(m => m.Password, "")
                 </div>
-                <div class="form-control">
+                <div class="form-group">
                     <label class="label">Confirm Password</label>
-                    <input type="password" placeholder="Password">
+                    @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control" })
+
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "")
                 </div>
 
             </div>

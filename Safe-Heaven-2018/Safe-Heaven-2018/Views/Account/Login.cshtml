@@ -11,13 +11,16 @@
 
             <!--  Fancy inputs  -->
             <div class="fancy-input">
-                <div class="form-control">
-                    <label class="label">Username</label>
-                    <input type="text" placeholder="JajaAwesome">
+                <div class="form-group">
+                    <label class="label" name="username">Username</label>
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Email, "")
                 </div>
-                <div class="form-control">
+                <div class="form-group">
                     <label class="label">Password</label>
-                    <input type="password" placeholder="Password">
+                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+
+                    @Html.ValidationMessageFor(m => m.Password, "")
                 </div>
 
             </div>
