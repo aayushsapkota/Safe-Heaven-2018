@@ -8,13 +8,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Safe_Heaven_2018.Models
 {
 	public class Score
-	{
+	{   
+        [Key]
 		public int scoreId { get; set; }
 		public int scoreValue { get; set; }
-		[ForeignKey("Player")]
-		public int playerId { get; set; }
-		[ForeignKey("Level")]
-		public int levelId { get; set; }
 
-	}
+		[ForeignKey("Player"), Column(Order = 0)]
+		public int playerId { get; set; }
+        public virtual Player Player { get; set; }
+
+        [ForeignKey("Level"), Column(Order = 1)]
+		public int levelId { get; set; }
+        public virtual Level Level { get; set; }
+
+    }
 }
