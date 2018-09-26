@@ -8,13 +8,25 @@ namespace Safe_Heaven_2018.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.Levels",
+                c => new
+                    {
+                        levelId = c.Int(nullable: false, identity: true),
+                        levelName = c.String(),
+                        levelDescription = c.String(),
+                    })
+                .PrimaryKey(t => t.levelId);
+            
+            CreateTable(
                 "dbo.Players",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        name = c.String(),
+                        playerId = c.Int(nullable: false, identity: true),
+                        playerUsername = c.String(),
+                        playerPlayTime = c.Time(nullable: false, precision: 7),
+                        playerDate = c.DateTime(nullable: false),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.playerId);
             
             CreateTable(
                 "dbo.AspNetRoles",
@@ -104,6 +116,7 @@ namespace Safe_Heaven_2018.Migrations
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
             DropTable("dbo.Players");
+            DropTable("dbo.Levels");
         }
     }
 }

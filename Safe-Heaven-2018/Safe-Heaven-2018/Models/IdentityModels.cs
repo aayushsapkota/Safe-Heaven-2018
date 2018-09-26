@@ -21,8 +21,15 @@ namespace Safe_Heaven_2018.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Player> players { get; set; }
+		public DbSet<Level> levels { get; set; }
+		//public DbSet<Score> scores { get; set; }
+		//public DbSet<MaxScore> maxScores { get; set; }
+		//public DbSet<Progress> progresses  { get; set; }
+		//public DbSet<Log> logs { get; set; }
 
-        public ApplicationDbContext()
+
+
+		public ApplicationDbContext()
             : base("DbContext", throwIfV1Schema: false)
         {
         }
