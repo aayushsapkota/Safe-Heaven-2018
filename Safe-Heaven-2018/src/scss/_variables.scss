@@ -33,6 +33,11 @@ $default-font-family: 'roboto';
 $hff: $heading-font-family;
 $dff: $default-font-family;
 
+// Sidebar variables
+$sidebar-width:              calc(100% - 260px) !default;
+$sidebar-mini-width:         calc(100% - 80px) !default;
+
+
 $grid-breakpoints: (
   xs: 0,
   sm: 576px,

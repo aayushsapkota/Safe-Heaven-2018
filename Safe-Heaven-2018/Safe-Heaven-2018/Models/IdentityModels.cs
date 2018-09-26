@@ -21,7 +21,7 @@ namespace Safe_Heaven_2018.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("db_sh", throwIfV1Schema: false)
         {
         }
 
