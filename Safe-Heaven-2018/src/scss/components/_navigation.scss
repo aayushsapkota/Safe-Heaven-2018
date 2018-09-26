@@ -36,7 +36,6 @@ nav .btn {
   @include base-base(20px, $dff, 0, 0);
 }
 /* drawer menu of mobile navigation */
-
 .drawer-menu {
   box-sizing: border-box;
   position: fixed;
@@ -93,7 +92,6 @@ nav .btn {
   }
 }
 /* mobile menu button - label tag */
-
 .menu-btn {
   position: fixed;
   display: block;
@@ -135,7 +133,6 @@ nav .btn {
   opacity: 1;
 }
 /* Close Menu */
-
 .close-menu {
   position: fixed;
   top: 0;
@@ -149,6 +146,7 @@ nav .btn {
   z-index: 99;
 }
 /* Checked Effects */
+
 .check {
   display: none;
 }
@@ -220,12 +218,18 @@ nav .btn {
     position: fixed;
     z-index: 99;
     align-items: center;
-    // justify-content: space-between;
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
+
   .desk-nav {
     display: flex;
     justify-content: space-between;
     width: calc(100% - 62px);
+
     ul {
       list-style-type: none;
       padding: 0;
@@ -253,8 +257,6 @@ nav .btn {
     opacity: 0.6;
   }
 
-
-
   .desk-nav li {
     overflow: hidden;
   }
@@ -266,10 +268,7 @@ nav .btn {
     text-decoration: none;
     letter-spacing: 1.2px;
     @include base-base(14px, $dff, 0, 0, $lines: 1.5);
-    padding-top: 16px;
-    padding-bottom: 15px;
-    padding-left: 12px;
-    padding-right: 10px;
+    padding: 16px 10px 15px 12px;
     font-weight: 500;
     text-transform: uppercase;
     transition: all 0.2s ease-out;
