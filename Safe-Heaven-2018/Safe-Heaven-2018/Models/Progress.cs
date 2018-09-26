@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Microsoft.AspNet.Identity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Safe_Heaven_2018.Models
 {
@@ -14,11 +16,11 @@ namespace Safe_Heaven_2018.Models
 
         [ForeignKey("Level")]
         public int levelId { get; set; }
-        public virtual Level level { get; set; }
+        public virtual Level Level { get; set; }
 
 
         [ForeignKey("ApplicationUser")]
-        public int Id { get; set; }
-        public virtual ApplicationUser aspNetUsers { get; set; }
+        public string Id { get; set; }
+        public virtual ApplicationUser ApplicationUser  { get; set; }
     }
 }
