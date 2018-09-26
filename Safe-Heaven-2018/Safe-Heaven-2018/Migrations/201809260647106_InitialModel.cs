@@ -3,10 +3,19 @@ namespace Safe_Heaven_2018.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class initialMigration : DbMigration
+    public partial class InitialModel : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Players",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        name = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -94,6 +103,7 @@ namespace Safe_Heaven_2018.Migrations
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Players");
         }
     }
 }

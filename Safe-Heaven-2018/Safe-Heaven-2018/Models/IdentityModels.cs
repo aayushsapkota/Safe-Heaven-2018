@@ -20,8 +20,10 @@ namespace Safe_Heaven_2018.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Player> players { get; set; }
+
         public ApplicationDbContext()
-            : base("db_sh", throwIfV1Schema: false)
+            : base("DbContext", throwIfV1Schema: false)
         {
         }
 

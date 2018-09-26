@@ -202,16 +202,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201809260308026_initialMigration.cs" />
-    <Compile Include="Migrations\201809260308026_initialMigration.Designer.cs">
-      <DependentUpon>201809260308026_initialMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201809260321327_initialMigration1.cs" />
-    <Compile Include="Migrations\201809260321327_initialMigration1.Designer.cs">
-      <DependentUpon>201809260321327_initialMigration1.cs</DependentUpon>
+    <Compile Include="Migrations\201809260647106_InitialModel.cs" />
+    <Compile Include="Migrations\201809260647106_InitialModel.Designer.cs">
+      <DependentUpon>201809260647106_InitialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Player.cs" />
     <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -246,7 +243,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -300,11 +299,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201809260308026_initialMigration.resx">
-      <DependentUpon>201809260308026_initialMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201809260321327_initialMigration1.resx">
-      <DependentUpon>201809260321327_initialMigration1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201809260647106_InitialModel.resx">
+      <DependentUpon>201809260647106_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
