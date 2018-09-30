@@ -14,13 +14,13 @@ namespace Safe_Heaven_2018.Models
         [Key]
         public int progressId { get; set; }
 
-        [ForeignKey("Level")]
-        public int levelId { get; set; }
-        public virtual Level Level { get; set; }
+        //[ForeignKey("Level")]
+        //public int levelId { get; set; }
+        //public virtual Level Level { get; set; }
+
+        public virtual ICollection<Level> Levels { get; set; }
 
 
-        [ForeignKey("ApplicationUser")]
-        public string Id { get; set; }
-        public virtual ApplicationUser ApplicationUser  { get; set; }
+       
     }
 }

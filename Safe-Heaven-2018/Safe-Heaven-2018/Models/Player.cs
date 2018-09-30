@@ -15,8 +15,7 @@ namespace Safe_Heaven_2018.Models
 		public TimeSpan playerPlayTime { get; set; }
 		public DateTime playerDate { get; set; }
         
-
-
+        
 
 
 	}
