@@ -23,9 +23,11 @@ namespace Safe_Heaven_2018.Models
         public DbSet<Player> players { get; set; }
         public DbSet<Level> levels { get; set; }
         public DbSet<Score> scores { get; set; }
-        public DbSet<MaxScore> maxScores { get; set; }
+        //public DbSet<MaxScore> maxScores { get; set; }
         public DbSet<Progress> progresses  { get; set; }
-        //public DbSet<Log> logs { get; set; }
+        public DbSet<Log> logs { get; set; }
+        public DbSet<Page> pages { get; set; }
+
 
 
 
@@ -38,5 +40,10 @@ namespace Safe_Heaven_2018.Models
         {
             return new ApplicationDbContext();
         }
+
+       
     }
+
+  
+    
 }

@@ -11,7 +11,7 @@ namespace Safe_Heaven_2018.Models
         public int logId { get; set; }
         public long logtime { get; set; }
         public string logDecsription { get; set; }
-        [ForeignKey("user")]
-        public int UserId { get; set; }
+
+        
     }
 }

@@ -18,6 +18,8 @@ namespace Safe_Heaven_2018.Models
     {
         public IList<UserLoginInfo> CurrentLogins { get; set; }
         public IList<AuthenticationDescription> OtherLogins { get; set; }
+        public ICollection<Player> Players { get; set; }
+        public ICollection<Log> Logs { get; set; }
     }
 
     public class FactorViewModel
