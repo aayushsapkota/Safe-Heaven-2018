@@ -18,9 +18,6 @@ namespace Safe_Heaven_2018.Models
         //public int levelId { get; set; }
         //public virtual Level Level { get; set; }
 
-        public virtual ICollection<Level> Levels { get; set; }
-
-
        
     }
 }
