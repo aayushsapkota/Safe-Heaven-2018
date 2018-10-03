@@ -17,6 +17,25 @@ namespace Safe_Heaven_2018.Controllers
         {
             return View();
         }
+
+        public ActionResult Stages()
+        {
+            return View();
+        }
+
+        public ActionResult School()
+        {
+            return View();
+        }
+
+        public ActionResult Mall()
+        {
+            return View();
+        }
+        public ActionResult Warning()
+        {
+            return View();
+        }
     }
 }
 

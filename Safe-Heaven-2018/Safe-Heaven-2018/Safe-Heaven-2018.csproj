@@ -245,6 +245,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\art\panda.bg.jpg" />
+    <Content Include="Content\fonts\icons.svg" />
     <Content Include="Content\main.bundle.css" />
     <Content Include="Content\main.bundle.js" />
     <Content Include="Content\material-dashboard.min.css" />
@@ -259,6 +260,9 @@
     <Content Include="Content\main.bundle.css.map" />
     <Content Include="Content\main.bundle.js.map" />
     <Content Include="Content\material-dashboard.css.map" />
+    <Content Include="Content\fonts\icons.eot" />
+    <Content Include="Content\fonts\icons.ttf" />
+    <Content Include="Content\fonts\icons.woff" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\JavaScript.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -316,6 +320,9 @@
     <Content Include="Views\Players\Details.cshtml" />
     <Content Include="Views\Players\Edit.cshtml" />
     <Content Include="Views\Players\Index.cshtml" />
+    <Content Include="Views\Game\Stages.cshtml" />
+    <Content Include="Views\Game\School.cshtml" />
+    <Content Include="Views\Game\Mall.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

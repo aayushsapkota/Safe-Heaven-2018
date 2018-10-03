@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Safe_Heaven_2018.Models.Player>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container wrap">
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create", null, new { @class="btn btn-warning"})
+    </p>
+    <div class="card">
+        <table class="table card-body">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Username)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Age)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Age)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.playerId }, new { @class = "btn btn-sm btn-info waves-effect waves-light" })
+                        @Html.ActionLink("Details", "Details", new { id = item.playerId }, new { @class = "btn btn-sm btn-info waves-effect waves-light" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.playerId }, new { @class = "btn btn-sm btn-info waves-effect waves-light" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
