@@ -100,14 +100,14 @@ function ready(callback) {
 ready(function () {
   __WEBPACK_IMPORTED_MODULE_1_object_fit_images___default()();
 
-  new __WEBPACK_IMPORTED_MODULE_2__levelManager__["default"]();
+  new __WEBPACK_IMPORTED_MODULE_2__levelManager___default.a();
 });
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: \r\n@import \"gameplay\";\r\n^\r\n      File to import not found or unreadable: C:\\Users\\Aayush Sapkota\\Desktop\\sites\\Safe-Heaven-2018\\Safe-Heaven-2018\\src\\scss\\components\\_gameplay.scss.\r\n      in C:\\Users\\Aayush Sapkota\\Desktop\\sites\\Safe-Heaven-2018\\Safe-Heaven-2018\\src\\scss\\components\\_components.scss (line 7, column 1)\n    at runLoaders (C:\\Users\\Aayush Sapkota\\Desktop\\sites\\Safe-Heaven-2018\\Safe-Heaven-2018\\node_modules\\webpack\\lib\\NormalModule.js:195:19)\n    at C:\\Users\\Aayush Sapkota\\Desktop\\sites\\Safe-Heaven-2018\\Safe-Heaven-2018\\node_modules\\loader-runner\\lib\\LoaderRunner.js:364:11\n    at C:\\Users\\Aayush Sapkota\\Desktop\\sites\\Safe-Heaven-2018\\Safe-Heaven-2018\\node_modules\\loader-runner\\lib\\LoaderRunner.js:230:18\n    at context.callback (C:\\Users\\Aayush Sapkota\\Desktop\\sites\\Safe-Heaven-2018\\Safe-Heaven-2018\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.asyncSassJobQueue.push [as callback] (C:\\Users\\Aayush Sapkota\\Desktop\\sites\\Safe-Heaven-2018\\Safe-Heaven-2018\\node_modules\\sass-loader\\lib\\loader.js:55:13)\n    at Object.done [as callback] (C:\\Users\\Aayush Sapkota\\Desktop\\sites\\Safe-Heaven-2018\\Safe-Heaven-2018\\node_modules\\neo-async\\async.js:7974:18)\n    at options.error (C:\\Users\\Aayush Sapkota\\Desktop\\sites\\Safe-Heaven-2018\\Safe-Heaven-2018\\node_modules\\node-sass\\lib\\index.js:294:32)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 3 */
@@ -355,7 +355,57 @@ module.exports = fix;
 /* 4 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open 'C:\\Users\\Aayush Sapkota\\Desktop\\sites\\Safe-Heaven-2018\\Safe-Heaven-2018\\src\\js\\levelManager.js'");
+module.exports = class levelManager {
+
+  constructor(options) {
+    let defaults = {
+      nextBtn: '.level1__next',
+      levelSectionClass: '.level__section',
+      hiddenClass: 'hidden'
+    };
+
+    let populated = Object.assign(defaults, options);
+    for (let key in populated) {
+      if (populated.hasOwnProperty(key)) {
+        this[key] = populated[key];
+      }
+    }
+
+    this.next(this);
+  }
+
+  next(that) {
+    console.log("running");
+    let nextBtns = document.querySelectorAll(that.nextBtn);
+    let levelSections = document.querySelectorAll(that.levelSectionClass);
+    if (nextBtns) {
+      // console.log("inside");
+      let levelSectionsSize = levelSections.length;
+      for (let i = 0; i < nextBtns.length; i++) {
+        console.log(nextBtns[i]);
+
+        nextBtns[i].addEventListener("click", function (event) {
+          let currentlevelSection = event.target.parentNode.parentNode;
+
+          //hiding current section
+          currentlevelSection.classList.add(that.hiddenClass);
+          console.log(currentlevelSection);
+
+          var nextIndex = i + 1;
+          var nextLevelSection = null;
+          if (nextIndex < levelSectionsSize) {
+            nextLevelSection = levelSections[i + 1];
+          } else {
+            nextLevelSection = levelSections[i];
+          }
+
+          currentlevelSection.classList.add(that.hiddenClass);
+          nextLevelSection.classList.remove(that.hiddenClass);
+        });
+      }
+    }
+  }
+};
 
 /***/ })
 /******/ ]);
