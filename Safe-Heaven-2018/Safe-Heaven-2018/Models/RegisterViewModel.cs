@@ -27,6 +27,7 @@ namespace Safe_Heaven_2018.Models
 		public string Password { get; set; }
 
 		[DataType(DataType.Password)]
+		[Required(ErrorMessage ="Confirm password section need to be filled")]
 		[Display(Name = "Confirm password")]
 		[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
 		public string ConfirmPassword { get; set; }

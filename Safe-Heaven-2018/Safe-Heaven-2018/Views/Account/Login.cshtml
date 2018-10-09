@@ -9,9 +9,13 @@
         <form action="/" method="post" class="fancy-input__form">
             <h1>Login into Safe-Heaven</h1>
 
+
             <!--  Fancy inputs  -->
+           @Html.ValidationSummary("", new { @class = "text-danger" })
+
             <div class="fancy-input">
                 <div class="form-group">
+
                     <label class="label" name="username">Username</label>
                     @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                     @Html.ValidationMessageFor(m => m.Email, "")
