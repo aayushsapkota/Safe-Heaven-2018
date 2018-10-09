@@ -1,0 +1,79 @@
+.menu-page {
+  background-image: url("/content/art/panda.bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - 55px);
+  display: flex;
+  align-items: center;
+  @include padding-trailer(3);
+
+  * {
+    position: relative;
+    z-index: 3;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: 2;
+    background-color: black;
+    opacity: 0.4;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.menu-page__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.menu-page__title {
+  width: 100%;
+  text-align: center;
+  color: white;
+  @include padding-trailer(1);
+  @include base-base(48px, $hff, 3, 0);
+  // MEDIUM MQ
+  @include media-breakpoint-up("md") {
+    @include base-base(64px, $hff, 3, 0);
+  }
+}
+
+.menu-page__img {
+  width: 220px;
+  height: 220px;
+  @include object-fit(contain, center);
+  @include margin-trailer(2);
+}
+
+.menu-page__btn-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .btn {
+    background-color: theme-color(primary);
+    max-width: 350px;
+    text-align: center;
+    min-width: 220px;
+    width: 50%;
+    padding-left: 24px;
+    padding-right: 24px;
+    transition: all 0.25s linear;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: rgba(theme-color(primary), 0.8);
+    }
+  }
+}

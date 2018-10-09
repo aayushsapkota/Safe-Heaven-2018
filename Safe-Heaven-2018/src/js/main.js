@@ -1,5 +1,6 @@
 import '../../src/scss/_main.scss';
 import objectFitImages from 'object-fit-images';
+import levelManager from './levelManager';
 
 function ready(callback){
   // in case the document is already rendered
@@ -14,12 +15,7 @@ function ready(callback){
 
 ready(function(){
   objectFitImages();
-});
-var add = document.querySelector('.side-nav');
-var button = document.getElementById('collapse-btn');
 
-var icons = document.getElementById('navbar-item');
-button.addEventListener("click", evt =>{
-  button.classList.toggle('rotated');
-  add.classList.toggle('active');
+  new levelManager();
+
 });

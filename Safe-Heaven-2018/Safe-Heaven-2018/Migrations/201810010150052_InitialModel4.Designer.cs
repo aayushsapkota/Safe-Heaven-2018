@@ -13,7 +13,7 @@ namespace Safe_Heaven_2018.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201809300444442_InitialModel4"; }
+            get { return "201810010150052_InitialModel4"; }
         }
         
         string IMigrationMetadata.Source

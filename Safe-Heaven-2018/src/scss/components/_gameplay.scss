@@ -1,0 +1,87 @@
+.gameplay {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 1;
+  background-image: url('/webchampionv5/img/galaxy1.jpg');
+  @include padding-leader(2);
+  @include padding-trailer(3);
+
+  * {
+    position: relative;
+    z-index: 3;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    background-color: $blue--lighter;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.gameplay {
+  div.content,
+  iframe {
+    border: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .htmloutput {
+    background-color: white;
+    padding-left: 12px;
+    padding-right: 12px;
+    // SMALL MQ
+    @include media-breakpoint-up("sm") {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  .htmloutput #html {
+    width: 100%;
+    min-height: 200px;
+    flex-grow: 1;
+  }
+
+
+
+}
+
+.gameplay__content{
+  width: 100%;
+  position: relative;
+  padding-left: 6px;
+  padding-top: 12px;
+  border-bottom: 2px solid theme-color(dark);
+  // SMALL MQ
+  @include media-breakpoint-up("sm") {
+    border-bottom: 0;
+    border-right: 2px solid theme-color(dark);
+    width: calc(50% - 7px);
+    &:nth-child(2n){
+      border-right: 0;
+    }
+  }
+
+  &:nth-child(2n){
+    border-bottom: 0;
+  }
+}
+
+.gameplay__check {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+}

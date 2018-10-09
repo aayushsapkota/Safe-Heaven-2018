@@ -1,0 +1,36 @@
+﻿@model Safe_Heaven_2018.Models.Player
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container wrap">
+    <h2>Details</h2>
+
+    <div>
+        <h4>Player</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Username)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Username)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Age)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Age)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.playerId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

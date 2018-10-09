@@ -80,6 +80,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__src_scss_main_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__src_scss_main_scss__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_object_fit_images__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_object_fit_images___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_object_fit_images__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__levelManager__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__levelManager___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__levelManager__);
+
 
 
 
@@ -96,14 +99,8 @@ function ready(callback) {
 
 ready(function () {
   __WEBPACK_IMPORTED_MODULE_1_object_fit_images___default()();
-});
-var add = document.querySelector('.side-nav');
-var button = document.getElementById('collapse-btn');
 
-var icons = document.getElementById('navbar-item');
-button.addEventListener("click", evt => {
-  button.classList.toggle('rotated');
-  add.classList.toggle('active');
+  new __WEBPACK_IMPORTED_MODULE_2__levelManager___default.a();
 });
 
 /***/ }),
@@ -353,6 +350,62 @@ fix.supportsObjectPosition = supportsObjectPosition;
 hijackAttributes();
 
 module.exports = fix;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = class levelManager {
+
+  constructor(options) {
+    let defaults = {
+      nextBtn: '.level1__next',
+      levelSectionClass: '.level__section',
+      hiddenClass: 'hidden'
+    };
+
+    let populated = Object.assign(defaults, options);
+    for (let key in populated) {
+      if (populated.hasOwnProperty(key)) {
+        this[key] = populated[key];
+      }
+    }
+
+    this.next(this);
+  }
+
+  next(that) {
+    console.log("running");
+    let nextBtns = document.querySelectorAll(that.nextBtn);
+    let levelSections = document.querySelectorAll(that.levelSectionClass);
+    if (nextBtns) {
+      // console.log("inside");
+      let levelSectionsSize = levelSections.length;
+      for (let i = 0; i < nextBtns.length; i++) {
+        console.log(nextBtns[i]);
+
+        nextBtns[i].addEventListener("click", function (event) {
+          let currentlevelSection = event.target.parentNode.parentNode;
+
+          //hiding current section
+          currentlevelSection.classList.add(that.hiddenClass);
+          console.log(currentlevelSection);
+
+          var nextIndex = i + 1;
+          var nextLevelSection = null;
+          if (nextIndex < levelSectionsSize) {
+            nextLevelSection = levelSections[i + 1];
+          } else {
+            nextLevelSection = levelSections[i];
+          }
+
+          currentlevelSection.classList.add(that.hiddenClass);
+          nextLevelSection.classList.remove(that.hiddenClass);
+        });
+      }
+    }
+  }
+};
 
 /***/ })
 /******/ ]);

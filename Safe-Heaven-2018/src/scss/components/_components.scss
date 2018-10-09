@@ -1,18 +1,19 @@
-@import "btn";
 @import "banner";
 @import "combined-heading";
 @import "event-card";
 @import "footer";
 @import "fancy-input";
 @import "forms";
+@import "gameplay";
 @import "home-banner";
 @import "homepage";
 @import "header";
+@import "menu-page";
 @import "modal";
 @import "navigation";
 @import "records";
 @import "summary-card";
-@import "table";
+
 
 //here so it comes on end of css to override other styles
 @import "general-styles";

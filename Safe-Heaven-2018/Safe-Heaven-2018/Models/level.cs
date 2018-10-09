@@ -6,12 +6,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Safe_Heaven_2018.Models
 {
-	public class Level
-	{
+    public class Level
+    {
         [Key]
-		public int levelId { get; set; }
-		public string levelName { get; set; }
-		public string levelDescription { get; set; }
-        
-	}
+        public int levelId { get; set; }
+        public string levelName { get; set; }
+        public string levelDescription { get; set; }
+
+        public virtual ICollection<Score> Scores { get; set; }
+        public virtual ICollection<Progress> Progresses { get; set; }
+
+
+    }
 }
