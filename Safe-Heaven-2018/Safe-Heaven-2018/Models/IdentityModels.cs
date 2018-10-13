@@ -41,7 +41,7 @@ namespace Safe_Heaven_2018.Models
             return new ApplicationDbContext();
         }
 
-       
+        public System.Data.Entity.DbSet<Safe_Heaven_2018.Models.allowedTime> allowedTimes { get; set; }
     }
 
   

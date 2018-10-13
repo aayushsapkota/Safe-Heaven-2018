@@ -197,6 +197,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\allowedTimesController.cs" />
     <Compile Include="Controllers\GameController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -230,6 +231,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\allowedTime.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Level.cs" />
@@ -323,6 +325,11 @@
     <Content Include="Views\Game\Stages.cshtml" />
     <Content Include="Views\Game\School.cshtml" />
     <Content Include="Views\Game\Mall.cshtml" />
+    <Content Include="Views\allowedTimes\Create.cshtml" />
+    <Content Include="Views\allowedTimes\Delete.cshtml" />
+    <Content Include="Views\allowedTimes\Details.cshtml" />
+    <Content Include="Views\allowedTimes\Edit.cshtml" />
+    <Content Include="Views\allowedTimes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
