@@ -1,0 +1,77 @@
+.school {
+  background-image: url("/content/art/carpet-school.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  min-height: calc(110vh - 55px);
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+
+  * {
+    z-index: 3;
+    position: relative;
+  }
+}
+.school__computer-link {
+  text-decoration: none;
+  &:hover, &:active,
+  &:focus {
+    text-decoration: none;
+    .school__computer::before{
+      border-radius: 50%;
+      background-color: white;
+      color: theme-color(dark);
+       box-shadow: 0 0 30px 15px #fff, 0 0 40px 20px $gold;
+   }
+  }
+}
+
+.school__top-row {
+  border-bottom: 8px solid white;
+  text-align: center;
+  @include margin-trailer(4);
+  // MEDIUM MQ
+  @include media-breakpoint-up("md") {
+    @include margin-trailer(6);
+  }
+
+  // LARGE MQ
+  @include media-breakpoint-up("lg") {
+    @include margin-trailer(14);
+  }
+}
+
+.school__bottom-row {
+  border-bottom: 8px solid white;
+  transform: rotate(180deg);
+}
+
+.school__computer {
+  &::before {
+    font-size: 82px;
+    color: white;
+    margin-left: 12px;
+    margin-right: 12px;
+    animation: 3s fade-in 0s;
+    animation-fill-mode: forwards;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+    @include media-breakpoint-up("lg") {
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+  }
+}
+
+@keyframes fade-in {
+  from {
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

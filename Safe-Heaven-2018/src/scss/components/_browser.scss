@@ -1,0 +1,149 @@
+.browser {
+  .container {
+    padding: 0;
+    padding-right: 12px;
+    padding-left: 12px;
+    background-color: white;
+    border: 3px solid #f1f1f1;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    min-height: calc(85vh - 55px);
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    right: 10px;
+    z-index: 4;
+    animation: 2s fade-in;
+  }
+  .row {
+    padding: 10px;
+    background: #f1f1f1;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  /* Create three unequal columns that floats next to each other */
+  .column {
+    float: left;
+  }
+
+  .left {
+    width: 15%;
+  }
+
+  .right {
+    width: 10%;
+  }
+
+  .middle {
+    width: 75%;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  /* Three dots */
+  .dot {
+    margin-top: 4px;
+    height: 12px;
+    width: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* Style the input field */
+  input[type=text] {
+    width: 100%;
+    border-radius: 3px;
+    border: none;
+    background-color: white;
+    margin-top: -8px;
+    height: 25px;
+    color: #666;
+    padding: 5px;
+  }
+
+  /* Three bars (hamburger menu) */
+  .bar {
+    width: 17px;
+    height: 3px;
+    background-color: #aaa;
+    margin: 3px 0;
+    display: block;
+  }
+
+  /* Page content */
+  .content {
+    padding: 10px;
+  }
+
+  h2 {
+    @include padding-leader(2);
+    @include margin-trailer(1);
+  }
+
+  .modal--open {
+    z-index: 5;
+    background-color: white;
+    max-width: 100%;
+    margin-top: 5%;
+    margin-right: 10%;
+    margin-left: 10%;
+
+    .icon-warning {
+      color: theme-color(danger);
+      &:before {
+        font-size: 64px;
+      }
+    }
+  }
+}
+
+.browser__img {
+  width: 85%;
+  margin-right: 15%;
+  height: auto;
+
+  // MEDIUM MQ
+  @include media-breakpoint-up("md") {
+    width: 65%;
+    margin-right: 35%;
+  }
+}
+
+$blue-fb: #3B5998;
+.browser__nav-fb {
+  width: 100%;
+  height: auto;
+  background-color: $blue-fb!important;
+  color: white;
+  a {
+    background-color: transparent;
+    margin-left: 6px;
+    margin-right: 6px;
+    display: inline-block;
+    color: white;
+  }
+  input {
+    width: 30%;
+    display: inline-block;
+  }
+}
+
+.browser {
+  .btn__wrap {
+    width: 100%;
+    overflow: hidden;
+  }
+  .browser__nav-fb {
+    input {
+      width: 30%;
+      display: inline-block;
+    }
+  }
+}

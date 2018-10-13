@@ -1,0 +1,43 @@
+.mall {
+  background-image: url("/content/art/mall-floor.jpg");
+  background-repeat: repeat;
+  min-height: calc(110vh - 55px);
+  position: relative;
+  z-index: 1;
+  color: white;
+
+  &::before {
+    content: "";
+   background-color: black;
+   opacity: 0.4;
+   width: 100%;
+   position: absolute;
+   height: 100%;
+   top: 0;
+   left: 0;
+   z-index: 2;
+  }
+
+  * {
+    z-index: 3;
+    position: relative;
+  }
+}
+
+.mall__icons {
+  height: 122px;
+  @include margin-trailer(2);
+  
+  &:before {
+    font-size: 122px;
+    color: white;
+    margin-left: 12px;
+    margin-right: 12px;
+
+    // MEDIUM MQ
+    @include media-breakpoint-up("md") {
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+  }
+}

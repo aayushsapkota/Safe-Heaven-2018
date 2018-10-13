@@ -10,6 +10,8 @@ using Safe_Heaven_2018.Models;
 
 namespace Safe_Heaven_2018.Controllers
 {
+
+    [Authorize]
     public class allowedTimesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -39,7 +41,8 @@ namespace Safe_Heaven_2018.Controllers
         // GET: allowedTimes/Create
         public ActionResult Create()
         {
-            ViewBag.playerId = new SelectList(db.Players, "playerId", "Username");
+
+            ViewBag.playerId = new SelectList(db.players, "playerId", "Username");
             return View();
         }
 
@@ -57,7 +60,8 @@ namespace Safe_Heaven_2018.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.playerId = new SelectList(db.Players, "playerId", "Username", allowedTime.playerId);
+            ViewBag.playerId = new SelectList(db.players, "playerId", "Username", allowedTime.playerId);
+
             return View(allowedTime);
         }
 
@@ -73,7 +77,9 @@ namespace Safe_Heaven_2018.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.playerId = new SelectList(db.Players, "playerId", "Username", allowedTime.playerId);
+
+            ViewBag.playerId = new SelectList(db.players, "playerId", "Username", allowedTime.playerId);
+
             return View(allowedTime);
         }
 
@@ -90,7 +96,8 @@ namespace Safe_Heaven_2018.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.playerId = new SelectList(db.Players, "playerId", "Username", allowedTime.playerId);
+
+            ViewBag.playerId = new SelectList(db.players, "playerId", "Username", allowedTime.playerId);
             return View(allowedTime);
         }
 
