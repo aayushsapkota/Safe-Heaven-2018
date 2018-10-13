@@ -5,22 +5,13 @@
 
 <section class="fancy-input__wrap">
     <div class="container">
-        <form action="/" method="post" class="fancy-input__form">
+        <form action="/Account/Register" method="post" class="fancy-input__form">
             <h1>@ViewBag.Title</h1>
-
+            @Html.AntiForgeryToken()
             <!--  Fancy inputs  -->
             <div class="fancy-input">
-                @Html.ValidationSummary("", new {@class = "text-danger"})
-                <div class="form-group">
-                    <label class="label">FullName</label>
-                    @Html.TextBoxFor(m => m.FullName, new { @class = "form-control"})
-                    @Html.ValidationMessageFor(m=>m.FullName,"")
-                </div>
-                <div class="form-group">
-                    <label class="label">Username</label>
-                    @Html.TextBoxFor(m=> m.Username, new { @class = "form-control" })
-                    @Html.ValidationMessageFor(m=> m.Username,"")
-                </div>
+                @Html.ValidationSummary("", new { @class = "text" })
+             
                 <div class="form-group">
                     <label class="label">Email address</label>
                     @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
@@ -29,7 +20,7 @@
                 </div>
                 <div class="form-group">
                     <label class="label">Password</label>
-                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
 
                     @Html.ValidationMessageFor(m => m.Password, "")
 
@@ -38,7 +29,7 @@
                 <div class="form-group">
                     <label class="label">Confirm Password</label>
 
-                    @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
 
                     @Html.ValidationMessageFor(m => m.ConfirmPassword, "")
                 </div>

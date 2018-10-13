@@ -6,35 +6,47 @@
 
 <section class="fancy-input__wrap">
     <div class="container">
-        <form action="/" method="post" class="fancy-input__form">
-            <h1>Login into Safe-Heaven</h1>
-
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "fancy-input__form", role = "form" }))
+        {<h1>Login into Safe-Heaven</h1>
+            @Html.AntiForgeryToken()
 
             <!--  Fancy inputs  -->
-           @Html.ValidationSummary("", new { @class = "text-danger" })
+            @Html.ValidationSummary("", new { @class = "text" })
 
             <div class="fancy-input">
                 <div class="form-group">
-
-                    <label class="label" name="username">Username</label>
+                    <label class="label" name="Email">Email Address</label>
                     @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                     @Html.ValidationMessageFor(m => m.Email, "")
                 </div>
                 <div class="form-group">
-                    <label class="label">Password</label>
-                    @Html.TextBoxFor(m => m.Password, new { @class = "form-control" })
+                    <label class="label" for="Password">Password</label>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
 
                     @Html.ValidationMessageFor(m => m.Password, "")
                 </div>
             </div>
-
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" class="btn" value="Login" />
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe)
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class=" col-md-10">
+                    <input type="submit" class="btn btn-warning" value="Login" />
+                    @Html.ActionLink("Register as a new user", "Register", "", new { @class = "btn btn-warning" })
+
                 </div>
 
             </div>
-        </form>
+        }
     </div>
-
 </section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
