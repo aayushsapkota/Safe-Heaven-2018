@@ -41,7 +41,6 @@ namespace Safe_Heaven_2018.Controllers
         // GET: allowedTimes/Create
         public ActionResult Create()
         {
-
             ViewBag.playerId = new SelectList(db.players, "playerId", "Username");
             return View();
         }

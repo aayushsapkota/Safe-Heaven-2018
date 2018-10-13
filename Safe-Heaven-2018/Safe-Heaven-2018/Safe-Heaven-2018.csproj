@@ -232,15 +232,13 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\allowedTime.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\Log.cs" />
     <Compile Include="Models\Level.cs" />
     <Compile Include="Models\Player.cs" />
-    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Progress.cs" />
-    <Compile Include="Models\RegisterViewModel.cs" />
     <Compile Include="Models\Score.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
